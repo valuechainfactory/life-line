@@ -1,1 +1,15 @@
-<p> Details Page </p>
+<p style="color: green"><%= notice %></p>
+
+<%= render @patient %>
+
+
+
+<div>
+  <%= link_to "Edit this patient", edit_patient_path(@patient) %> |
+  <%= link_to "Back to patients", patients_path %>
+
+  <%= button_to "Destroy this patient", @patient, method: :delete %>
+</div>
+
+
+<%= link_to "Add pre existing condition" , new_patient_pre_existing_condition_path(@patient) %>
