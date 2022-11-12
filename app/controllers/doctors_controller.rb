@@ -6,7 +6,6 @@ class DoctorsController < ApplicationController
     recent_patients
   end
 
-
   private
 
   def percentage_of_conditions
@@ -16,14 +15,12 @@ class DoctorsController < ApplicationController
     @asthma = PreExistingCondition.where(asthma: true).count
     @total = @diabetes + @hypertension + @asthma
 
-    @diabetes_percentage = @diabetes.to_f / @total.to_f * 100
-    @hypertension_percentage = @hypertension.to_f / @total.to_f * 100
-    @asthma_percentage = @asthma.to_f / @total.to_f * 100
+    @diabetes_percentage = @diabetes.to_f / @total * 100
+    @hypertension_percentage = @hypertension.to_f / @total * 100
+    @asthma_percentage = @asthma.to_f / @total * 100
   end
 
   def recent_patients
     @patients = Patient.where(doctor_id: current_doctor.id).last(5)
   end
-
-
 end
