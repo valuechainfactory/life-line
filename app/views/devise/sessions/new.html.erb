@@ -1,9 +1,12 @@
-<h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
-  <div class="field">
+
+  <div>
+  <h2 class = "text-center" > Log in </h2>
+  <small class = "text-center" > Login to access your account </small>
+  <div class = "form-group d-flex justify" >
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: "form-control w-25" %>
   </div>
 
   <div class="field">
