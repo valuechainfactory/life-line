@@ -1,3 +1,2 @@
 class PreExistingCondition < ApplicationRecord
-    
 end
