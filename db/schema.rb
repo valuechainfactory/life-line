@@ -10,15 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_12_084556) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_12_100143) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "next_of_kins", force: :cascade do |t|
-    t.string "first_name"
-    t.string "second_name"
-    t.string "phone_number"
-  end
 
   create_table "conditions_drugs", force: :cascade do |t|
     t.bigint "pre_existing_condition_id", null: false
@@ -50,12 +44,21 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_12_084556) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "pre_existing_conditions", force: :cascade do |t|
-    t.boolean "diabetes", default: false
-    t.boolean "hypertension", default: false
-    t.boolean "asthma", default: false
+  create_table "next_of_kins", force: :cascade do |t|
+    t.string "first_name"
+    t.string "second_name"
+    t.string "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "patient_next_of_kins", force: :cascade do |t|
+    t.bigint "patient_id", null: false
+    t.bigint "next_of_kin_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["next_of_kin_id"], name: "index_patient_next_of_kins_on_next_of_kin_id"
+    t.index ["patient_id"], name: "index_patient_next_of_kins_on_patient_id"
   end
 
   create_table "patients", force: :cascade do |t|
@@ -70,13 +73,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_12_084556) do
     t.string "doctor_id"
   end
 
+  create_table "pre_existing_conditions", force: :cascade do |t|
+    t.boolean "diabetes", default: false
+    t.boolean "hypertension", default: false
+    t.boolean "asthma", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "conditions_drugs", "drug_allergies"
   add_foreign_key "conditions_drugs", "pre_existing_conditions"
   add_foreign_key "conditions_foods", "food_allergies"
   add_foreign_key "conditions_foods", "pre_existing_conditions"
+  add_foreign_key "patient_next_of_kins", "next_of_kins"
+  add_foreign_key "patient_next_of_kins", "patients"
 end
-
-
-
-
-

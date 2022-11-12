@@ -1,0 +1,2 @@
+class PatientNextOfKin < ApplicationRecord
+end
