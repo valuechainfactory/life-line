@@ -11,7 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_11_12_140620) do
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -116,5 +115,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_12_140620) do
   add_foreign_key "patient_next_of_kins", "next_of_kins"
   add_foreign_key "patient_next_of_kins", "patients"
   add_foreign_key "patients", "doctors"
-
 end
