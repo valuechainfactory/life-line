@@ -80,6 +80,12 @@ rspec
 - Twitter: [@ger_abol](https://twitter.com/ger_abol)
 - LinkedIn: [David Ger](https://linkedin.com/in/david-ger-426b4576)
 
+👤 **MICHAELMUNAVU83**
+
+- GitHub: [@MICHAELMUNAVU83](https://github.com/MICHAELMUNAVU83)
+- Twitter: [@MichaelTrance1](https://twitter.com/MichealTrance1)
+- LinkedIn: [@micheal-munavu](https://www.linkedin.com/in/michael-munavu/)
+
 
 ## 🤝 Contributing
 
