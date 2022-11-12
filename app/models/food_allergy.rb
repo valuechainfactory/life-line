@@ -1,0 +1,2 @@
+class FoodAllergy < ApplicationRecord
+end
