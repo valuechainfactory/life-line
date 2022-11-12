@@ -1,0 +1,2 @@
+class ConditionsDrug < ApplicationRecord
+end
