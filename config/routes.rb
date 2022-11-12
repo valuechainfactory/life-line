@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "doctors#index"
   devise_scope :doctor do get '/doctors/sign_out' => 'devise/sessions#destroy' end
+
+  resources :patients, only: [:index, :show, :new, :create, :destroy]
 end
