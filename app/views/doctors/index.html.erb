@@ -1,4 +1,10 @@
 <h> Index Home</h>
+<nav>
+    <ul>
+    <li><%= link_to "Sign Out", destroy_doctor_session_path, method: :delete %></li>
+    </ul>
+</nav>
+
 <div>
     <h1>Doctor Details</h1>
     <ul>
@@ -7,8 +13,6 @@
             <li><%= @doctor.hospital_name %></li>
             <li><%= @doctor.email %></li>
     </ul>
-
-
 </div>
 
 <div>
@@ -18,7 +22,6 @@
         <li>Patients with Hypertension: <%= @hypertension_percentage%>%</li>
         <li>Patients with Asthma: <%= @asthma_percentage %>%</li>
     </ul>
-
 </div>
 
 <div>
