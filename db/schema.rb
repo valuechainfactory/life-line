@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_12_081438) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_12_091752) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "conditions_foods", force: :cascade do |t|
+    t.bigint "pre_existing_condition_id", null: false
+    t.bigint "food_allergy_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["food_allergy_id"], name: "index_conditions_foods_on_food_allergy_id"
+    t.index ["pre_existing_condition_id"], name: "index_conditions_foods_on_pre_existing_condition_id"
+  end
 
   create_table "drug_allergies", force: :cascade do |t|
     t.string "name"
@@ -34,4 +43,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_12_081438) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "conditions_foods", "food_allergies"
+  add_foreign_key "conditions_foods", "pre_existing_conditions"
 end
