@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  diabetes: false
+  hypertension: false
+  asthma: false
+
+two:
+  diabetes: false
+  hypertension: false
+  asthma: false
