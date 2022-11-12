@@ -1,1 +1,42 @@
 <h> Index Home</h>
+<div>
+    <h1>Doctor Details</h1>
+    <ul>
+            <li><%= @doctor.name %></li>
+            <li><%= @doctor.doctor_id %></li>
+            <li><%= @doctor.hospital_name %></li>
+            <li><%= @doctor.email %></li>
+    </ul>
+
+
+</div>
+
+<div>
+    <h2>Pre-Existing Condition Summary </h2>
+    <ul>
+        <li>Patients with Diabetes: <%= @diabetes_percentage %>%</li>
+        <li>Patients with Hypertension: <%= @hypertension_percentage%>%</li>
+        <li>Patients with Asthma: <%= @asthma_percentage %>%</li>
+    </ul>
+
+</div>
+
+<div>
+<button><%= link_to "Add Patient", new_patient_path %></button>
+</div>
+
+<div>
+    <h2>Recent Patients</h2>
+    <ul>
+        <% @patients.each do |patient| %>
+            <li><%= patient.image %></li>
+            <li><%= patient.first_name %></li>
+            <li><%= patient.last_name %></li>
+            <li><%= link_to 'Show', patient_path(patient.id) %></li>
+        <% end %>
+    </ul>
+</div>
+
+<div>
+    <button><%= link_to "All Patients", patients_path %></button>
+</div>
