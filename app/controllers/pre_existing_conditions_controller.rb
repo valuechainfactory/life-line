@@ -15,6 +15,16 @@ class PreExistingConditionsController < ApplicationController
         redirect_to pre_existing_conditions_path
     end
 
+    def update
+        @pre_existing_condition = PreExistingCondition.find(params[:id])
+        if @pre_existing_condition.update(pre_existing_condition_params)
+            redirect_to @pre_existing_condition
+        else
+            render :edit
+        end
+    end
+        
+
 
     private
     def pre_existing_condition_params
