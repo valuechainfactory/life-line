@@ -4,6 +4,8 @@
     <%= patient.first_name %>
   </p>
 
+  <h2>Pre Existing Conditions</h2>
+
   <% patient.pre_existing_conditions.map do |pre_existing_condition| %>
     <p>
       <strong>Diabetes</strong>
@@ -18,6 +20,27 @@
     <%= pre_existing_condition.hypertension %>
   </p>
   <% end %>
+
+  <h2>Food Allergies</h2>
+  <% patient.food_allergies.map do |food_allergy| %>
+    <p>
+      <strong>Name</strong>
+      <%= food_allergy.name %>
+    </p>
+    <% end %>
+
+    <h2>Drug Allergies</h2>
+    <% patient.drug_allergies.map do |drug_allergy| %>
+     
+        <p>
+            <strong>Name</strong>
+            <%= drug_allergy.name %>
+        </p>
+        
+        <% end %>
+
+        <h2>Patient details </h2>
+        
 
   <p>
     <strong>Last name:</strong>

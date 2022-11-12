@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Patient < ApplicationRecord
   has_many :drug_allergies
   has_many :food_allergies

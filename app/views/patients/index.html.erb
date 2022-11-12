@@ -7,7 +7,7 @@
 
 <div id="patients">
   <% @patients.each do |patient| %>
-    <%= render patient %>
+    <%= render "patients/indexpatient", patient: patient %>
     <p>
       <%= link_to "Show this patient", patient %>
     </p>

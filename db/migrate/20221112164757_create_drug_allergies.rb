@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateDrugAllergies < ActiveRecord::Migration[7.0]
   def change
     create_table :drug_allergies do |t|

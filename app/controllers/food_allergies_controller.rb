@@ -1,6 +1,10 @@
+# frozen_string_literal: true
+
+# rubocop: disable Style/Documentation
+
 class FoodAllergiesController < ApplicationController
   before_action :set_patient
-  before_action :set_food_allergy, only: [:show, :edit, :update, :destroy]
+  before_action :set_food_allergy, only: %i[show edit update destroy]
 
   # GET patients/1/food_allergies
   def index
@@ -8,8 +12,7 @@ class FoodAllergiesController < ApplicationController
   end
 
   # GET patients/1/food_allergies/1
-  def show
-  end
+  def show; end
 
   # GET patients/1/food_allergies/new
   def new
@@ -17,15 +20,14 @@ class FoodAllergiesController < ApplicationController
   end
 
   # GET patients/1/food_allergies/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST patients/1/food_allergies
   def create
     @food_allergy = @patient.food_allergies.build(food_allergy_params)
 
     if @food_allergy.save
-      redirect_to([@food_allergy.patient, @food_allergy], notice: 'Food allergy was successfully created.')
+      redirect_to(@food_allergy.patient)
     else
       render action: 'new'
     end
@@ -48,17 +50,20 @@ class FoodAllergiesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_patient
-      @patient = Patient.find(params[:patient_id])
-    end
 
-    def set_food_allergy
-      @food_allergy = @patient.food_allergies.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_patient
+    @patient = Patient.find(params[:patient_id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def food_allergy_params
-      params.require(:food_allergy).permit(:name, :patient_id)
-    end
+  def set_food_allergy
+    @food_allergy = @patient.food_allergies.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def food_allergy_params
+    params.require(:food_allergy).permit(:name, :patient_id)
+  end
 end
+
+# rubocop: enable Style/Documentation
