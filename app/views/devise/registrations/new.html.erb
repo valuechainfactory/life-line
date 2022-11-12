@@ -1,60 +1,109 @@
-<h2 class="text-center">Sign up</h2>
-
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
-  </div>
-  <div class="field">
-    <%= f.label :doctor_id %><br />
-    <%= f.text_field :doctor_id, autofocus: true, autocomplete: "Doctors ID" %>
-  </div>
-  <div class="field">
-    <%= f.label :hospital_name %><br />
-    <%= f.text_field :hospital_name, autofocus: true, autocomplete: "Hospital" %>
-  </div>
+  <section class="vh-100 my-2" style="background-color: #FFFFFF;">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+  
+                <h4>Sign Up to <strong>Your Acount</strong></h4>
+  
+                <form class="mx-1 mx-md-4">
+  
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      
+                      <%= f.label :name , class: "form-label" %><br />
+                      <%= f.text_field :name, autofocus: true, autocomplete: "name"  , class: "form-control" %>
+                    </div>
+                  </div>
+  
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                     
+                      <%= f.label :email , class: "form-label" %><br />
+                      <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: "form-control" %>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-center mb-4">
+                     <div class="form-outline flex-fill mb-0">
+                       <label class="form-label" for="form3Example3c">National Doctor id</label>
+                     <%= f.text_field :doctor_id, autofocus: true, autocomplete: "Doctors ID" , class: "form-control" %>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-center mb-4">
+                     <div class="form-outline flex-fill mb-0">
+                       <label class="form-label" for="form3Example3c">Your Hospital Name</label>
+                       <%= f.text_field :hospital_name, autofocus: true, autocomplete: "Hospital" , class: "form-control" %>
+                    </div>
+                  </div>
+  
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      
+                      <%= f.label :password , class: "form-label" %>
+                      <% if @minimum_password_length %>
+                      <em>(<%= @minimum_password_length %> characters minimum)</em>
+                      <% end %><br />
+                      <%= f.password_field :password, autocomplete: "new-password" , class: "form-control" %>
+                    </div>
+                  </div>
+  
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                     
+                      <%= f.label :password_confirmation ,class: "form-label" %><br />
+                      <%= f.password_field :password_confirmation, autocomplete: "new-password" , class: "form-control" %>
+                    </div>
+                  </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+                  <div>
+                   
+                    <input type="checkbox" id="form2Example3c" />
+                    <label class="form-check-label" for="terms">I agree to the terms and conditions</label>
+                    
+                  </div>
 
 
+  
+                  
+  
+                 
+                    <%= f.submit "Sign up" , class: "btn btn-primary btn-lg w-75" %>
+                  
+  
+                  <div class="form-check  mb-5">
+                    Already have an account? <%= link_to "Sign in", new_session_path(resource_name) , class: "mx-2" %>
+                  </div>
+  
+                </form>
+  
+              </div>
+              <div class="col-md-5 col-lg-6 col-xl-7 d-flex align-items-top mt-5 order-1 order-lg-2">
+  
+                
 
-<form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <%= image_tag("signup.png", :alt => "signup", :class => "img-fluid") %>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+  </section>
+   
+  <% end %>
+  
+  
+  
+  

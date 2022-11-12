@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_12_091924) do
-
+ActiveRecord::Schema[7.0].define(version: 2022_11_12_114801) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -77,6 +76,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_12_091924) do
     t.index ["pre_existing_condition_id"], name: "index_patient_conditions_on_pre_existing_condition_id"
   end
 
+  create_table "patient_next_of_kins", force: :cascade do |t|
+    t.bigint "patient_id", null: false
+    t.bigint "next_of_kin_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["next_of_kin_id"], name: "index_patient_next_of_kins_on_next_of_kin_id"
+    t.index ["patient_id"], name: "index_patient_next_of_kins_on_patient_id"
+  end
+
   create_table "patients", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -103,4 +111,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_12_091924) do
   add_foreign_key "conditions_foods", "pre_existing_conditions"
   add_foreign_key "patient_conditions", "patients"
   add_foreign_key "patient_conditions", "pre_existing_conditions"
+  add_foreign_key "patient_next_of_kins", "next_of_kins"
+  add_foreign_key "patient_next_of_kins", "patients"
 end
