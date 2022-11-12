@@ -5,4 +5,7 @@ class Patient < ApplicationRecord
   validates :image, presence: true
   validates :telephone, presence: true
   validates :gender, presence: true
+
+  has_many :pre_existing_conditions, through: :patient_conditions, foreign_key: :patient_id, dependent: :destroy
+  has_many :patient_conditions, foreign_key: :patient_id, dependent: :destroy
 end
