@@ -10,9 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_12_091924) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_12_084556) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "next_of_kins", force: :cascade do |t|
+    t.string "first_name"
+    t.string "second_name"
+    t.string "phone_number"
+  end
 
   create_table "conditions_drugs", force: :cascade do |t|
     t.bigint "pre_existing_condition_id", null: false
