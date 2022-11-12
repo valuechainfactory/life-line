@@ -58,8 +58,25 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_12_084556) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "patients", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "national_id"
+    t.string "image"
+    t.string "telephone"
+    t.string "gender"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "doctor_id"
+  end
+
   add_foreign_key "conditions_drugs", "drug_allergies"
   add_foreign_key "conditions_drugs", "pre_existing_conditions"
   add_foreign_key "conditions_foods", "food_allergies"
   add_foreign_key "conditions_foods", "pre_existing_conditions"
 end
+
+
+
+
+
