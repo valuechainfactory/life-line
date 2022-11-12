@@ -4,6 +4,7 @@ class CreatePreExistingConditions < ActiveRecord::Migration[7.0]
       t.boolean :diabetes , default: false
       t.boolean :hypertension , default: false
       t.boolean :asthma , default: false
+      t.references :patient, null: false, foreign_key: true
 
       t.timestamps
     end
