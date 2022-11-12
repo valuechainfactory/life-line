@@ -27,9 +27,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_12_081438) do
   end
 
   create_table "pre_existing_conditions", force: :cascade do |t|
-    t.boolean "diabetes"
-    t.boolean "hypertension"
-    t.boolean "asthma"
+    t.boolean "diabetes", default: false
+    t.boolean "hypertension", default: false
+    t.boolean "asthma", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
