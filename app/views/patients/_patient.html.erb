@@ -21,23 +21,37 @@
   </p>
   <% end %>
 
-  <h2>Food Allergies</h2>
-  <% patient.food_allergies.map do |food_allergy| %>
+
+  <% if patient.food_allergies.length>0 %>
+      <h2>Food Allergies</h2>
+
+        <% patient.food_allergies.map do |food_allergy| %>
+           <p>
+            <strong>Name</strong>
+            <%= food_allergy.name %>
+        </p>
+        <% end %>
+    <% else %>
     <p>
-      <strong>Name</strong>
-      <%= food_allergy.name %>
+      <strong>Food Allergies:</strong>
+        None
     </p>
     <% end %>
 
-    <h2>Drug Allergies</h2>
-    <% patient.drug_allergies.map do |drug_allergy| %>
-     
-        <p>
-            <strong>Name</strong>
-            <%= drug_allergy.name %>
-        </p>
-        
+    <% if patient.drug_allergies.length>0 %>
+      <h2>Drug Allergies</h2>
+        <% patient.drug_allergies.map do |drug_allergy| %>
+          <p>
+              <strong>Name</strong>
+              <%= drug_allergy.name %>
+          </p>
         <% end %>
+    <% else %>
+    <p>
+      <strong>Drug Allergies:</strong>
+        None
+    </p>
+    <% end %>
 
         <h2>Patient details </h2>
         

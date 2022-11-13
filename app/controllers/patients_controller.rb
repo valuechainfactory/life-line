@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PatientsController < ApplicationController
-  before_action :authenticate_doctor!
+  before_action :authenticate_doctor!, only: %i[index new edit create update destroy]
   before_action :set_patient, only: %i[show edit update destroy]
 
   # GET /patients or /patients.json
@@ -28,10 +28,8 @@ class PatientsController < ApplicationController
     respond_to do |format|
       if @patient.save
         format.html { redirect_to patient_url(@patient), notice: 'Patient was successfully created.' }
-        format.json { render :show, status: :created, location: @patient }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @patient.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -41,10 +39,8 @@ class PatientsController < ApplicationController
     respond_to do |format|
       if @patient.update(patient_params)
         format.html { redirect_to patient_url(@patient), notice: 'Patient was successfully updated.' }
-        format.json { render :show, status: :ok, location: @patient }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @patient.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -55,7 +51,6 @@ class PatientsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to patients_url, notice: 'Patient was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
