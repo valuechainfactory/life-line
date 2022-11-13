@@ -22,13 +22,18 @@
   </div>
 
   <div>
+    <%= form.label :date_of_birth, style: "display: block" %>
+    <%= form.date_field :date_of_birth %>
+  </div>
+
+  <div>
     <%= form.label :national_id, style: "display: block" %>
     <%= form.number_field :national_id %>
   </div>
 
   <div>
     <%= form.label :image, style: "display: block" %>
-    <%= form.text_field :image %>
+    <%= form.file_field :image %>
   </div>
 
   <div>

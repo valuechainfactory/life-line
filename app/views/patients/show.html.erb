@@ -1,10 +1,12 @@
 <p style="color: green"><%= notice %></p>
 
+
 <%= render @patient %>
 
 <p>
   <%= image_tag(@patient.qr_code) if @patient.qr_code.attached? %>
 </p>
+
 
 <div>
   <%= link_to "Edit this patient", edit_patient_path(@patient) %> |
@@ -13,8 +15,12 @@
   <%= button_to "Destroy this patient", @patient, method: :delete %>
 </div>
 
-
+<% if @patient.pre_existing_condition_count == 0 %>
 <%= link_to "Add pre existing condition" , new_patient_pre_existing_condition_path(@patient) %>
+  
+  
+    <% end %>
+
 <div>
 <%= link_to "Add food allergy" , new_patient_food_allergy_path(@patient) %>
 </div>

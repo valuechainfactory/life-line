@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+# rubocop: disable Layout/LineLength
 
 require 'test_helper'
 
@@ -52,3 +52,4 @@ class PatientsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to patients_url
   end
 end
+# rubocop: enable Layout/LineLength
