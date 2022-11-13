@@ -1,90 +1,127 @@
-<div id="<%= dom_id patient %>">
-  <p>
-    <strong>First name:</strong>
-    <%= patient.first_name %>
-  </p>
+<div class="container" id="<%= dom_id patient %>">
+  <div class="patient-info d-flex justify-content-between">
+    <div class="patient-image">
+      <%= image_tag(patient.image) if patient.image.attached? %>
+    </div>
+    <section class= "patient-name">
+      <h4>Patient details </h4>
+        <table class="table table-success table-striped table-bordered">
+          <tbody>
+            <tr>
+              <th scope="row">First Name</th>
+              <td><%= patient.first_name %></td>
+            </tr>
+            <tr>
+              <th scope="row">Last Name</th>
+              <td><%= patient.last_name %></td>
+            </tr>
+            <tr>
+              <th scope="row">National ID</th>
+              <td><%= patient.national_id %></td>
+            </tr>
+            <tr>
+              <th scope="row">Telephone</th>
+              <td><%= patient.telephone %></td>
+            </tr>
+            <tr>
+              <th scope="row"> Gender</th>
+              <td><%= patient.gender %></td>
+            </tr>
+          </tbody>
+      </table>
+  </section>
+  <section class="patient-condition">
 
-  <h2>Pre Existing Conditions</h2>
-
-  <% patient.pre_existing_conditions.map do |pre_existing_condition| %>
-    <p>
-      <strong>Diabetes</strong>
-      <%= pre_existing_condition.diabetes %>
-    </p>
-    <p>
-      <strong>asthma</strong>
-      <%= pre_existing_condition.asthma %>
-    </p>
-    <p>
-    <strong>hypertension</strong>
-    <%= pre_existing_condition.hypertension %>
-    <%= link_to "Edit", edit_patient_pre_existing_condition_path(patient, pre_existing_condition) %>
-  </p>
-  <% end %>
-
-
-  <% if patient.food_allergies.length>0 %>
-      <h2>Food Allergies</h2>
-
-        <% patient.food_allergies.map do |food_allergy| %>
-           <p>
-            <strong>Name</strong>
-            <%= food_allergy.name %>
-        </p>
+      <h4>Pre Existing Conditions</h4>
+      <ul class="conditions-list">
+        <% patient.pre_existing_conditions.each do |pre_existing_condition| %>
+          <li>Diabetes:
+          <% if pre_existing_condition.diabetes == true %>
+            <button class="btn btn-danger px-3">Yes</button>
+          <% else %>
+            <button class="btn btn-success px-3">No</button>
+          <% end %>
+          </li>
+          <li>Hypertension:
+          <% if pre_existing_condition.hypertension == true %>
+            <button class="btn btn-danger px-3">Yes</button>
+          <% else %>
+            <button class="btn btn-success px-3">No</button>
+          <% end %>
+          </li>
+          <li>Asthma:
+          <% if pre_existing_condition.asthma == true %>
+            <button class="btn btn-danger px-3">Yes</button>
+          <% else %>
+            <button class="btn btn-success px-3">No</button>
+          <% end %>
+          </li>
+          <button class="btn btn-light"><%= link_to "Edit", edit_patient_pre_existing_condition_path(patient, pre_existing_condition) %></button>
         <% end %>
-    <% else %>
-    <p>
-      <strong>Food Allergies:</strong>
-        None
-    </p>
-    <% end %>
+      </ul>
 
-    <% if patient.drug_allergies.length>0 %>
-      <h2>Drug Allergies</h2>
-        <% patient.drug_allergies.map do |drug_allergy| %>
-          <p>
-              <strong>Name</strong>
-              <%= drug_allergy.name %>
-          </p>
-        <% end %>
-    <% else %>
-    <p>
-      <strong>Drug Allergies:</strong>
-        None
-    </p>
-    <% end %>
 
-        <h2>Patient details </h2>
-        
+    <hr>
 
-  <p>
-    <strong>Last name:</strong>
-    <%= patient.last_name %>
-  </p>
+    <div class="patient-allergies">
+    <section class="food-allergies">
+      <h4 class="text-center">Allergies</h4>
+      <% if patient.food_allergies.length>0 %>
+            <% patient.food_allergies.map do |food_allergy| %>
+          <table class="table table-striped">
+              <thead>
+                <th scope="row">Food Allergy</th>
+              </thead>
+            <tbody>
 
-  <p>
-    <strong>National:</strong>
-    <%= patient.national_id %>
-  </p>
-
-  <p>
-    <strong>Image:</strong>
-    <%= image_tag(patient.image) if patient.image.attached? %>
-  </p>
-
-  <p>
-    <strong>Telephone:</strong>
-    <%= patient.telephone %>
-  </p>
-
-  <p>
-    <strong>Gender:</strong>
-    <%= patient.gender %>
-  </p>
-
-  <p>
-    <strong>Doctor:</strong>
-    <%= patient.doctor_id %>
-  </p>
+              <tr>
+                <td><%= food_allergy.name %></td>
+              </tr>
+            <% end %>
+            <% end %>
+            </tbody>
+          </table>
+          <table class="table table-striped">
+            <tbody>
+            <% if patient.food_allergies.length>0 %>
+              <% patient.drug_allergies.map do |drug_allergy| %>
+                <tr>
+                  <th scope="row">Drug Allergy</th>
+                  <td><%= drug_allergy.name %></td>
+                </tr>
+                  <tr>
+                    <th scope="row">No Drug Allergies</th>
+                  </tr>
+              <% end %>
+              <% end %>
+              <tr>
+              <td><%= link_to "Add food allergy" , new_patient_food_allergy_path(@patient) %></td>
+            </tbody>
+          </table>
+          <div>
 
 </div>
+
+    </section>
+    </div>
+
+  </section>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+

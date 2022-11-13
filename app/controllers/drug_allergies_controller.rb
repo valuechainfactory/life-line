@@ -61,4 +61,3 @@ class DrugAllergiesController < ApplicationController
     params.require(:drug_allergy).permit(:name, :patient_id)
   end
 end
-# rubocop: enable Style/Documentation

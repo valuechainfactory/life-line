@@ -15,6 +15,111 @@
     </ul>
 </div>
 
+    <div class="container">
+    	<div class="row"><!--Profile Card 3-->
+    		<div class="col-md-4">
+    		    <div class="card profile-card-3">
+    		        <div class="background-block">
+    		            <img src="https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="profile-sample1" class="background"/>
+    		        </div>
+    		        <div class="profile-thumb-block">
+    		            <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="profile-image" class="profile"/>
+    		        </div>
+    		        <div class="card-content">
+                    <h4><%= @doctor.name %></h4>
+                    <h4><%= @doctor.national_doctor_id %></h4>
+                    <h4><%= @doctor.hospital_name %></h4>
+                    <div class="icon-block"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"> <i class="fa fa-twitter"></i></a><a href="#"> <i class="fa fa-google-plus"></i></a></div>
+                    </div>
+                </div>
+                <p class="mt-3 w-100 float-left text-center"><strong>Modren Profile Card</strong></p>
+    		</div>
+    	</div>
+    </div>
+
+
+<div class="grey-bg container-fluid">
+  <section id="minimal-statistics">
+    <div class="row">
+      <div class="col-xl-3 col-sm-6 col-12"> 
+        <div class="card">
+          <div class="card-content">
+            <div class="card-body">
+              <div class="media d-flex">
+                <div class="align-self-center">
+                  <ion-icon name="people" style="font-size: 3.5rem; color: #76b5c5;"></ion-icon>
+                </div>
+                <div class="media-body text-right">
+                  <h3>278</h3>
+                  <span>Number of patients</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-sm-6 col-12">
+        <div class="card">
+          <div class="card-content">
+            <div class="card-body">
+              <div class="media d-flex">
+                <div class="align-self-center">
+                  <i class="icon-speech warning font-large-2 float-left"></i>
+                </div>
+                <div class="media-body text-right">
+                  <h3>156</h3>
+                  <span>New Comments</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-sm-6 col-12">
+        <div class="card">
+          <div class="card-content">
+            <div class="card-body">
+              <div class="media d-flex">
+                <div class="align-self-center">
+                  <i class="icon-graph success font-large-2 float-left"></i>
+                </div>
+                <div class="media-body text-right">
+                  <h3>64.89 %</h3>
+                  <span>Bounce Rate</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-sm-6 col-12">
+        <div class="card">
+          <div class="card-content">
+            <div class="card-body">
+              <div class="media d-flex">
+                <div class="align-self-center">
+                  <i class="icon-pointer danger font-large-2 float-left"></i>
+                </div>
+                <div class="media-body text-right">
+                  <h3>423</h3>
+                  <span>Total Visits</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+    
+  </section>
+  
+  
+</div>
+
+
+
 <div>
     <h2>Pre-Existing Condition Summary </h2>
     <ul>
@@ -29,15 +134,91 @@
 </div>
 
 <div>
-    <h2>Recent Patients</h2>
-    <ul>
-        <% @patients.each do |patient| %>
-            <li><%= patient.image %></li>
-            <li><%= patient.first_name %></li>
-            <li><%= patient.last_name %></li>
-            <li><%= link_to 'Show', patient_path(patient.id) %></li>
-        <% end %>
-    </ul>
+    <div class="main-content">
+    <div class="container mt-7">
+      <!-- Table -->
+      <h2 class="mb-5 text-center">Patients recently treated</h2><div class="row">
+        <div class="col">
+          <div class="card shadow">
+            <div class="table-responsive">
+              <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col" class="sort" data-sort="name"></th>
+                    <th scope="col">first name</th>
+                    <th scope="col">last name</th>
+                    <th scope="col">National id</th>
+                    <th scope="col">gender</th>
+                    <th scope="col">Completion</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <% @patients.each do |patient| %>
+                <tbody>
+                  <tr>
+                    <th scope="row">
+                      <div class="media align-items-center">
+                        <a href="#" class="avatar rounded-circle mr-3">
+                          <img alt="Image placeholder" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" style="width: 50px; height: 50px;">
+                        </a>
+                        <div class="media-body">
+                          <span class="mb-0 text-sm"></span>
+                        </div>
+                      </div>
+                    </th>
+                    <td>
+                      <%= patient.first_name %>
+                    </td>
+                    <td>
+                      <span class="mb-0 text-sm"><%= patient.last_name %></span>
+                    
+                    </td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <span class="mr-2"><%= patient.national_id %></span>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="mb-0 text-sm"><%= patient.gender %></span>
+                    
+                    </td>
+                  </tr>
+                </tbody>
+                <% end %>
+              </table>
+            </div>
+        <div class="card-footer py-4">
+              <nav aria-label="...">
+                <ul class="pagination justify-content-end mb-0">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">
+                      <i class="fas fa-angle-left"></i>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                  </li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">
+                      <i class="fas fa-angle-right"></i>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+
+
 </div>
 
 <div>
