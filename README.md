@@ -57,6 +57,10 @@ bundle install
 rspec
 ```
 
+##DESIGNS
+<img width="1440" alt="Sign up" src="https://user-images.githubusercontent.com/48310207/201519826-b29bc1cc-0c55-4d3d-aa42-d18d31f1ec5a.png">
+
+
 ## Authors
 
 👤 **Joy Kwamboka**
