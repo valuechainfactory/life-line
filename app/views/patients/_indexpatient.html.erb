@@ -1,11 +1,13 @@
 <div id="<%= dom_id patient %>">
 <tbody>
  <tr>
-                    <th scope="row">
+                     <th scope="row">
                       <div class="media align-items-center">
-                        <a href="#" class="avatar rounded-circle mr-3">
-                          <img alt="Image placeholder" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" style="width: 50px; height: 50px;">
-                        </a>
+                        <%= link_to patient_path(patient) , class: "avatar rounded-circle mr-3" do %>
+                        
+                         <%= image_tag  patient.image %>
+            
+                        <% end %>
                         <div class="media-body">
                           <span class="mb-0 text-sm"></span>
                         </div>
@@ -27,10 +29,7 @@
                       <span class="mb-0 text-sm"><%= patient.gender %></span>
                     
                     </td>
-                    <td>
-                      <span class="mb-0 text-sm"><%= link_to "Show", patient_path(patient) %></span>
-                    
-                    </td>
+                   
                   </tr>
 </tbody>
 

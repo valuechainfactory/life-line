@@ -7,7 +7,7 @@
           <tbody>
           <tr>
               <th scope="row">Image</th>
-              <td><%= image_tag(patient.image) if patient.image.attached?  %></td>
+              <td class="patient-image"><%= image_tag patient.image, class: "img-fluid" %></td>
             <tr>
               <th scope="row">First Name</th>
               <td><%= patient.first_name %></td>
