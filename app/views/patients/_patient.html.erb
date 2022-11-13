@@ -1,12 +1,13 @@
 <div class="container" id="<%= dom_id patient %>">
   <div class="patient-info d-flex justify-content-between">
-    <div class="patient-image">
-      <%= image_tag(patient.image) if patient.image.attached? %>
-    </div>
+    
     <section class= "patient-name">
       <h4>Patient details </h4>
         <table class="table table-success table-striped table-bordered">
           <tbody>
+          <tr>
+              <th scope="row">Image</th>
+              <td><%= image_tag(patient.image) if patient.image.attached?  %></td>
             <tr>
               <th scope="row">First Name</th>
               <td><%= patient.first_name %></td>
@@ -29,99 +30,94 @@
             </tr>
           </tbody>
       </table>
-  </section>
-  <section class="patient-condition">
+    </section>
+    <section class="patient-condition">
 
-      <h4>Pre Existing Conditions</h4>
-      <ul class="conditions-list">
-        <% patient.pre_existing_conditions.each do |pre_existing_condition| %>
-          <li>Diabetes:
-          <% if pre_existing_condition.diabetes == true %>
-            <button class="btn btn-danger px-3">Yes</button>
-          <% else %>
-            <button class="btn btn-success px-3">No</button>
+        <h4>Pre Existing Conditions</h4>
+        <ul class="conditions-list ">
+          <% patient.pre_existing_conditions.each do |pre_existing_condition| %>
+            <li>Diabetes:
+            <% if pre_existing_condition.diabetes == true %>
+              <button class="btn btn-danger px-3">Patient has history of diabetes</button>
+            <% else %>
+              <button class="btn btn-success px-3">Patient has no history of diabetes</button>
+            <% end %>
+            </li>
+            <li>Hypertension:
+            <% if pre_existing_condition.hypertension == true %>
+              <button class="btn btn-danger px-3">Patient has history of hypertension</button>
+            <% else %>
+              <button class="btn btn-success px-3">Patient has no history of hypertension</button>
+            <% end %>
+            </li>
+            <li>Asthma:
+            <% if pre_existing_condition.asthma == true %>
+              <button class="btn btn-danger px-3">Patient has history of asthma</button>
+            <% else %>
+              <button class="btn btn-success px-3">Patient has no history of asthma</button>
+            <% end %>
+            </li>
+            <button class="btn btn-dark text-light"><%= link_to "Edit", edit_patient_pre_existing_condition_path(patient, pre_existing_condition) , class: "text-light" %></button>
           <% end %>
-          </li>
-          <li>Hypertension:
-          <% if pre_existing_condition.hypertension == true %>
-            <button class="btn btn-danger px-3">Yes</button>
-          <% else %>
-            <button class="btn btn-success px-3">No</button>
-          <% end %>
-          </li>
-          <li>Asthma:
-          <% if pre_existing_condition.asthma == true %>
-            <button class="btn btn-danger px-3">Yes</button>
-          <% else %>
-            <button class="btn btn-success px-3">No</button>
-          <% end %>
-          </li>
-          <button class="btn btn-light"><%= link_to "Edit", edit_patient_pre_existing_condition_path(patient, pre_existing_condition) %></button>
+        </ul>
+
+        <% if @patient.pre_existing_condition_count == 0 %>
+        <%= link_to "Add pre existing condition" , new_patient_pre_existing_condition_path(@patient) %>
         <% end %>
-      </ul>
 
 
-    <hr>
+      <hr>
 
-    <div class="patient-allergies">
-    <section class="food-allergies">
-      <h4 class="text-center">Allergies</h4>
-      <% if patient.food_allergies.length>0 %>
-            <% patient.food_allergies.map do |food_allergy| %>
-          <table class="table table-striped">
-              <thead>
-                <th scope="row">Food Allergy</th>
-              </thead>
-            <tbody>
-
-              <tr>
-                <td><%= food_allergy.name %></td>
-              </tr>
-            <% end %>
-            <% end %>
-            </tbody>
-          </table>
-          <table class="table table-striped">
-            <tbody>
-            <% if patient.food_allergies.length>0 %>
-              <% patient.drug_allergies.map do |drug_allergy| %>
-                <tr>
-                  <th scope="row">Drug Allergy</th>
-                  <td><%= drug_allergy.name %></td>
-                </tr>
+      <div class="patient-allergies">
+      <section class="food-allergies d-flex">
+            <table class="table table-striped table-primary mx-2">
+                <thead>
                   <tr>
-                    <th scope="row">No Drug Allergies</th>
+                    <th scope="col">Food Allergy:<%=patient.food_allergies.length %></th>
                   </tr>
+                </thead>
+              <tbody>
+              <% if patient.food_allergies.length>0 %>
+              <% patient.food_allergies.map do |food_allergy| %>
+                <tr>
+                  <td><%= food_allergy.name %></td>
+                </tr>
               <% end %>
               <% end %>
-              <tr>
-              <td><%= link_to "Add food allergy" , new_patient_food_allergy_path(@patient) %></td>
-            </tbody>
-          </table>
-          <div>
+              </tbody>
+            </table>
 
-</div>
+
+            <table class="table table-striped table-info">
+                <thead>
+                  <tr>
+                    <th scope="col">Drug Allergy:<%=patient.drug_allergies.length %></th>
+                  </tr>
+                </thead>
+              <tbody>
+                <% if patient.drug_allergies.length>0 %>
+                <% patient.drug_allergies.map do |drug_allergy| %>
+                  <tr>
+                    <td><%= drug_allergy.name %></td>
+                  </tr>
+
+              <% end %>
+              <% end %>
+              </tbody>
+            </table>
+      </section>
+        <div class="add-buttons text-center" >
+            <button class="btn btn-light"><%= link_to "Add food allergy" , new_patient_food_allergy_path(@patient) %></button>
+            <button class="btn btn-light ms-5"><%= link_to "Add drug allergy" , new_patient_drug_allergy_path(@patient) %></button>
+        </div>
+
+      </div>
+      </section>
+
+      </div>
 
     </section>
-    </div>
-
-  </section>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
 
 

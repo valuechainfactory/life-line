@@ -3,27 +3,22 @@
 
 
 <%= render @patient %>
-<div class="patient-code">
+<div class="text-start mx-4 mb-5">
   <p>
     <%= image_tag(@patient.qr_code) if @patient.qr_code.attached? %>
   </p>
 </div>
 
 
-<div>
-  <%= link_to "Back to patients", patients_path %>
+<div class="text-center">
+  <%= link_to "Back to patients", patients_path , class: "btn btn-danger btn-lg" %>
 
 
 </div>
 
-<% if @patient.pre_existing_condition_count == 0 %>
-<%= link_to "Add pre existing condition" , new_patient_pre_existing_condition_path(@patient) %>
 
-
-
-    <% end %>
 
 <div>
 
-<%= link_to "Add drug allergy" , new_patient_drug_allergy_path(@patient) %>
+
 </div>

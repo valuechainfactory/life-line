@@ -929,6 +929,13 @@ button.bg-default:focus {
   align-items: center !important;
 }
 
+/* patients new */
+
+#input-patient-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 @media (min-width: 1200px) {
   .justify-content-xl-between {
     justify-content: space-between !important;
@@ -1356,6 +1363,9 @@ a.btn-icon-only {
       transform: translate(0, 0);
       opacity: 1;
     }
+  }
+
+
   }
 
   @keyframes hide-navbar-dropdown {
