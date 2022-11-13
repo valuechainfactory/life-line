@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 RSpec.describe DrugAllergy, type: :model do
   it 'should not be valid without a name' do

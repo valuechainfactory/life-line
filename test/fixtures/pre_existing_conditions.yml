@@ -4,8 +4,10 @@ one:
   diabetes: false
   hypertension: false
   asthma: false
+  patient: one
 
 two:
   diabetes: false
   hypertension: false
   asthma: false
+  patient: two
