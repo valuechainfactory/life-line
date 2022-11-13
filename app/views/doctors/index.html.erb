@@ -111,7 +111,7 @@
         <div class="col">
           <div class="card shadow">
             <div class="table-responsive">
-              <table class="table align-items-center table-flush">
+              <table class="table align-items-center table-flush w-100">
                 <thead class="thead-light">
                   <tr>
                     <th scope="col" class="sort" data-sort="name"></th>
@@ -119,8 +119,7 @@
                     <th scope="col">last name</th>
                     <th scope="col">National id</th>
                     <th scope="col">gender</th>
-                    <th scope="col">Completion</th>
-                    <th scope="col"></th>
+                    <th scope="col">Action</th>
                   </tr>
                 </thead>
                 <% @patients.each do |patient| %>
@@ -150,7 +149,11 @@
                     </td>
                     <td>
                       <span class="mb-0 text-sm"><%= patient.gender %></span>
-                    
+    
+                    </td>
+                    <td>
+                      <ion-icon name="eye"></ion-icon>
+    
                     </td>
                   </tr>
                 </tbody>
