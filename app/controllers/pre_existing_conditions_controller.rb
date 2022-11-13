@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class PreExistingConditionsController < ApplicationController
   before_action :set_patient
   before_action :set_pre_existing_condition, only: %i[show edit update destroy]
@@ -35,7 +33,7 @@ class PreExistingConditionsController < ApplicationController
   def update
     @pre_existing_condition = @patient.pre_existing_conditions.find(params[:id])
     @pre_existing_condition.update(pre_existing_condition_params)
-    redirect_to (@pre_existing_condition.patient)
+    redirect_to(@pre_existing_condition.patient)
   end
 
   # DELETE patients/1/pre_existing_conditions/1
