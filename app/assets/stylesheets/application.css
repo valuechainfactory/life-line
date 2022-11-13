@@ -13,7 +13,10 @@
  *= require_tree .
  *= require_self
  */
-
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable declaration-block-no-duplicate-custom-properties */
+/* stylelint-disable csstree/validator */
 :root {
   --blue: #5e72e4;
   --indigo: #5603ad;
@@ -47,9 +50,15 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: Open Sans, sans-serif;
-  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
+  --font-family-sans-serif: open sans, sans-serif;
+  --font-family-monospace:
+    sfmono-regular,
+    menlo,
+    monaco,
+    consolas,
+    "Liberation Mono",
+    "Courier New",
+    monospace;
 }
 
 *,
@@ -409,8 +418,11 @@ h3,
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
   text-align: center;
   vertical-align: middle;
   white-space: nowrap;
@@ -451,7 +463,9 @@ h3,
 
 .btn:not(:disabled):not(.disabled):active:focus,
 .btn:not(:disabled):not(.disabled).active:focus {
-  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08),
+  box-shadow:
+    0 7px 14px rgba(50, 50, 93, 0.1),
+    0 3px 6px rgba(0, 0, 0, 0.08),
     none;
 }
 
@@ -488,8 +502,10 @@ a.btn.disabled {
   border-radius: 0.4375rem;
   background-color: #fff;
   background-clip: padding-box;
-  box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1),
-    0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 50px 100px rgba(50, 50, 93, 0.1),
+    0 15px 35px rgba(50, 50, 93, 0.15),
+    0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .dropdown-menu-right {
@@ -735,19 +751,17 @@ a.btn.disabled {
 .tooltip.show {
   opacity: 0.9;
 }
+
 .tooltip .arrow {
   position: absolute;
-
   display: block;
-
   width: 0.8rem;
   height: 0.4rem;
 }
+
 .tooltip .arrow::before {
   position: absolute;
-
   content: "";
-
   border-style: solid;
   border-color: transparent;
 }
@@ -756,14 +770,15 @@ a.btn.disabled {
 .bs-tooltip-auto[x-placement^="top"] {
   padding: 0.4rem 0;
 }
+
 .bs-tooltip-top .arrow,
 .bs-tooltip-auto[x-placement^="top"] .arrow {
   bottom: 0;
 }
+
 .bs-tooltip-top .arrow::before,
 .bs-tooltip-auto[x-placement^="top"] .arrow::before {
   top: 0;
-
   border-width: 0.4rem 0.4rem 0;
   border-top-color: #000;
 }
@@ -772,17 +787,17 @@ a.btn.disabled {
 .bs-tooltip-auto[x-placement^="right"] {
   padding: 0 0.4rem;
 }
+
 .bs-tooltip-right .arrow,
 .bs-tooltip-auto[x-placement^="right"] .arrow {
   left: 0;
-
   width: 0.4rem;
   height: 0.8rem;
 }
+
 .bs-tooltip-right .arrow::before,
 .bs-tooltip-auto[x-placement^="right"] .arrow::before {
   right: 0;
-
   border-width: 0.4rem 0.4rem 0.4rem 0;
   border-right-color: #000;
 }
@@ -791,14 +806,15 @@ a.btn.disabled {
 .bs-tooltip-auto[x-placement^="bottom"] {
   padding: 0.4rem 0;
 }
+
 .bs-tooltip-bottom .arrow,
 .bs-tooltip-auto[x-placement^="bottom"] .arrow {
   top: 0;
 }
+
 .bs-tooltip-bottom .arrow::before,
 .bs-tooltip-auto[x-placement^="bottom"] .arrow::before {
   bottom: 0;
-
   border-width: 0 0.4rem 0.4rem;
   border-bottom-color: #000;
 }
@@ -807,17 +823,17 @@ a.btn.disabled {
 .bs-tooltip-auto[x-placement^="left"] {
   padding: 0 0.4rem;
 }
+
 .bs-tooltip-left .arrow,
 .bs-tooltip-auto[x-placement^="left"] .arrow {
   right: 0;
-
   width: 0.4rem;
   height: 0.8rem;
 }
+
 .bs-tooltip-left .arrow::before,
 .bs-tooltip-auto[x-placement^="left"] .arrow::before {
   left: 0;
-
   border-width: 0.4rem 0 0.4rem 0.4rem;
   border-left-color: #000;
 }
@@ -825,9 +841,7 @@ a.btn.disabled {
 .tooltip-inner {
   max-width: 200px;
   padding: 0.25rem 0.5rem;
-
   text-align: center;
-
   color: #fff;
   border-radius: 0.375rem;
   background-color: #000;
@@ -1089,7 +1103,7 @@ main {
 
 @keyframes floating-lg {
   0% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
 
   50% {
@@ -1097,13 +1111,13 @@ main {
   }
 
   100% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
 }
 
 @keyframes floating {
   0% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
 
   50% {
@@ -1111,13 +1125,13 @@ main {
   }
 
   100% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
 }
 
 @keyframes floating-sm {
   0% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
 
   50% {
@@ -1125,7 +1139,7 @@ main {
   }
 
   100% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
 }
 
@@ -1290,6 +1304,7 @@ a.btn-icon-only {
 .dropdown-menu {
   min-width: 12rem;
 }
+
 .dropdown-menu.show {
   display: block;
 }
@@ -1501,19 +1516,23 @@ p {
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
 @import url("https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700");
+
 body {
   font-family: "Open Sans", sans-serif;
 }
+
 *:hover {
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
 }
+
 section {
   float: left;
   width: 100%;
   background: #fff; /* fallback for old browsers */
   padding: 30px 0;
 }
+
 h1 {
   float: left;
   width: 100%;
@@ -1521,6 +1540,7 @@ h1 {
   margin-bottom: 30px;
   font-size: 14px;
 }
+
 h1 span {
   font-family: "Libre Baskerville", serif;
   display: block;
@@ -1530,23 +1550,25 @@ h1 span {
   margin-top: 30px;
   font-weight: 700;
 }
+
 h1 a {
   color: #131313;
   font-weight: bold;
 }
 
-/*Profile Card 1*/
+/* Profile Card 1 */
 .profile-card-1 {
   font-family: "Open Sans", Arial, sans-serif;
   position: relative;
   float: left;
   overflow: hidden;
   width: 100%;
-  color: #ffffff;
+  color: #fff;
   text-align: center;
   height: 368px;
   border: none;
 }
+
 .profile-card-1 .background {
   width: 100%;
   vertical-align: top;
@@ -1556,6 +1578,7 @@ h1 a {
   -webkit-transform: scale(1.8);
   transform: scale(2.8);
 }
+
 .profile-card-1 .card-content {
   width: 100%;
   padding: 15px 25px;
@@ -1563,6 +1586,7 @@ h1 a {
   left: 0;
   top: 50%;
 }
+
 .profile-card-1 .profile {
   border-radius: 50%;
   position: absolute;
@@ -1575,20 +1599,23 @@ h1 a {
   -webkit-transform: translate(-50%, 0%);
   transform: translate(-50%, 0%);
 }
+
 .profile-card-1 h2 {
   margin: 0 0 5px;
   font-weight: 600;
   font-size: 25px;
 }
+
 .profile-card-1 h2 small {
   display: block;
   font-size: 15px;
   margin-top: 10px;
 }
+
 .profile-card-1 i {
   display: inline-block;
   font-size: 16px;
-  color: #ffffff;
+  color: #fff;
   text-align: center;
   border: 1px solid #fff;
   width: 30px;
@@ -1597,30 +1624,35 @@ h1 a {
   border-radius: 50%;
   margin: 0 5px;
 }
+
 .profile-card-1 .icon-block {
   float: left;
   width: 100%;
   margin-top: 15px;
 }
+
 .profile-card-1 .icon-block a {
   text-decoration: none;
 }
+
 .profile-card-1 i:hover {
   background-color: #fff;
   color: #2e3434;
   text-decoration: none;
 }
 
-/*Profile card 2*/
+/* Profile card 2 */
 .profile-card-2 .card-img-block {
   float: left;
   width: 100%;
   height: 150px;
   overflow: hidden;
 }
+
 .profile-card-2 .card-body {
   position: relative;
 }
+
 .profile-card-2 .profile {
   border-radius: 50%;
   position: absolute;
@@ -1631,21 +1663,26 @@ h1 a {
   -webkit-transform: translate(-50%, 0%);
   transform: translate(-50%, 0%);
 }
+
 .profile-card-2 h5 {
   font-weight: 600;
   color: #6ab04c;
 }
+
 .profile-card-2 .card-text {
   font-weight: 300;
   font-size: 15px;
 }
+
 .profile-card-2 .icon-block {
   float: left;
   width: 100%;
 }
+
 .profile-card-2 .icon-block a {
   text-decoration: none;
 }
+
 .profile-card-2 i {
   display: inline-block;
   font-size: 16px;
@@ -1658,12 +1695,13 @@ h1 a {
   border-radius: 50%;
   margin: 0 5px;
 }
+
 .profile-card-2 i:hover {
   background-color: #6ab04c;
   color: #fff;
 }
 
-/*Profile Card 3*/
+/* Profile Card 3 */
 .profile-card-3 {
   font-family: "Open Sans", Arial, sans-serif;
   position: relative;
@@ -1674,12 +1712,14 @@ h1 a {
   height: 368px;
   border: none;
 }
+
 .profile-card-3 .background-block {
   float: left;
   width: 100%;
   height: 200px;
   overflow: hidden;
 }
+
 .profile-card-3 .background-block .background {
   width: 100%;
   vertical-align: top;
@@ -1689,6 +1729,7 @@ h1 a {
   -webkit-transform: scale(1.8);
   transform: scale(2.8);
 }
+
 .profile-card-3 .card-content {
   width: 100%;
   padding: 15px 25px;
@@ -1700,6 +1741,7 @@ h1 a {
   position: relative;
   z-index: 9999;
 }
+
 .profile-card-3 .card-content::before {
   content: "";
   background: #efefef;
@@ -1711,6 +1753,7 @@ h1 a {
   z-index: -1;
   transform: rotate(-13deg);
 }
+
 .profile-card-3 .profile {
   border-radius: 50%;
   position: absolute;
@@ -1724,16 +1767,19 @@ h1 a {
   transform: translate(-50%, 0%);
   z-index: 99999;
 }
+
 .profile-card-3 h2 {
   margin: 0 0 5px;
   font-weight: 600;
   font-size: 25px;
 }
+
 .profile-card-3 h2 small {
   display: block;
   font-size: 15px;
   margin-top: 10px;
 }
+
 .profile-card-3 i {
   display: inline-block;
   font-size: 16px;
@@ -1746,30 +1792,35 @@ h1 a {
   border-radius: 50%;
   margin: 0 5px;
 }
+
 .profile-card-3 .icon-block {
   float: left;
   width: 100%;
   margin-top: 15px;
 }
+
 .profile-card-3 .icon-block a {
   text-decoration: none;
 }
+
 .profile-card-3 i:hover {
   background-color: #232323;
   color: #fff;
   text-decoration: none;
 }
 
-/*Profile card 4*/
+/* Profile card 4 */
 .profile-card-4 .card-img-block {
   float: left;
   width: 100%;
   height: 150px;
   overflow: hidden;
 }
+
 .profile-card-4 .card-body {
   position: relative;
 }
+
 .profile-card-4 .profile {
   border-radius: 50%;
   position: absolute;
@@ -1779,9 +1830,11 @@ h1 a {
   border: 3px solid rgba(255, 255, 255, 1);
   margin-left: -50px;
 }
+
 .profile-card-4 .card-img-block {
   position: relative;
 }
+
 .profile-card-4 .card-img-block > .info-box {
   position: absolute;
   background: rgba(217, 11, 225, 0.6);
@@ -1795,26 +1848,32 @@ h1 a {
   transition: 1s ease;
   opacity: 0;
 }
+
 .profile-card-4 .card-img-block:hover > .info-box {
   opacity: 1;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
 }
+
 .profile-card-4 h5 {
   font-weight: 600;
   color: #d90be1;
 }
+
 .profile-card-4 .card-text {
   font-weight: 300;
   font-size: 15px;
 }
+
 .profile-card-4 .icon-block {
   float: left;
   width: 100%;
 }
+
 .profile-card-4 .icon-block a {
   text-decoration: none;
 }
+
 .profile-card-4 i {
   display: inline-block;
   font-size: 16px;
@@ -1827,39 +1886,46 @@ h1 a {
   border-radius: 50%;
   margin: 0 5px;
 }
+
 .profile-card-4 i:hover {
   background-color: #d90be1;
   color: #fff;
 }
 
-/*Profile Card 5*/
+/* Profile Card 5 */
 .profile-card-5 {
   margin-top: 20px;
 }
+
 .profile-card-5 .btn {
   border-radius: 2px;
   text-transform: uppercase;
   font-size: 12px;
   padding: 7px 20px;
 }
+
 .profile-card-5 .card-img-block {
   width: 91%;
   margin: 0 auto;
   position: relative;
   top: -20px;
 }
+
 .profile-card-5 .card-img-block img {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.63);
 }
+
 .profile-card-5 h5 {
   color: #4e5e30;
   font-weight: 600;
 }
+
 .profile-card-5 p {
   font-size: 14px;
   font-weight: 300;
 }
+
 .profile-card-5 .btn-primary {
   background-color: #4e5e30;
   border-color: #4e5e30;

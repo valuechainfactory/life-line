@@ -7,4 +7,3 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: %i[name national_doctor_id hospital_name])
   end
 end
-# rubocop: enable Style/Documentation
