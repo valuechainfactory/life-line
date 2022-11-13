@@ -2,7 +2,9 @@
 
 <%= render @patient %>
 
-
+<p>
+  <%= image_tag(@patient.qr_code) if @patient.qr_code.attached? %>
+</p>
 
 <div>
   <%= link_to "Edit this patient", edit_patient_path(@patient) %> |
