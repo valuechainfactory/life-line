@@ -15,7 +15,7 @@ git clone https://github.com/valuechainfactory/team_Limon_arsenal_life_line.git
 ```
 
 ## Built with
-Ruby 3.1.2 on Rails 7.0.3.1 <br>
+Ruby 3.1.2 on Rails 7.0.4 <br>
 PostgreSQL
 
 ## Prerequisites
