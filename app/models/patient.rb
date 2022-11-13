@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+# rubocop: disable Metrics/MethodLength
 
 class Patient < ApplicationRecord
   has_many :drug_allergies
@@ -7,17 +7,18 @@ class Patient < ApplicationRecord
   belongs_to :doctor
 
   has_one_attached :qr_code
+  has_one_attached :image
 
   include Rails.application.routes.url_helpers
 
   after_create :generate_qr
   def generate_qr
     qr_url = url_for(controller: 'patients',
-            action: 'show',
-            id: self.id,
-            only_path: false,
-            host: 'localhost:3000',
-            source: 'from_qr')
+                     action: 'show',
+                     id: id,
+                     only_path: false,
+                     host: 'localhost:3000',
+                     source: 'from_qr')
     qrcode = RQRCode::QRCode.new(qr_url)
 
     png = qrcode.as_png(
@@ -31,13 +32,15 @@ class Patient < ApplicationRecord
       file: nil # path to write
     )
     image_name = SecureRandom.hex
-    IO.binwrite("tmp/#{image_name}.png", png.to_s)
+    File.binwrite("tmp/#{image_name}.png", png.to_s)
 
     blob = ActiveStorage::Blob.create_and_upload!(
       io: File.open("tmp/#{image_name}.png"),
       filename: image_name,
-      content_type: 'png')
+      content_type: 'png'
+    )
 
-    self.qr_code.attach(blob)
+    qr_code.attach(blob)
   end
 end
+# rubocop: enable Metrics/MethodLength

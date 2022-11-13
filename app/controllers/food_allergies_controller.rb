@@ -1,7 +1,3 @@
-# frozen_string_literal: true
-
-# rubocop: disable Style/Documentation
-
 class FoodAllergiesController < ApplicationController
   before_action :set_patient
   before_action :set_food_allergy, only: %i[show edit update destroy]
@@ -65,5 +61,3 @@ class FoodAllergiesController < ApplicationController
     params.require(:food_allergy).permit(:name, :patient_id)
   end
 end
-
-# rubocop: enable Style/Documentation

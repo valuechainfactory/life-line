@@ -1,6 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
 
+
 <%= render @patient %>
 <div class="patient-code">
   <p>
@@ -10,13 +11,18 @@
 
 
 
+
 <div>
   <%= link_to "Back to patients", patients_path %>
 
 
 </div>
 
+<% if @patient.pre_existing_condition_count == 0 %>
 
+
+
+    <% end %>
 
 <div>
 <%= link_to "Add food allergy" , new_patient_food_allergy_path(@patient) %>

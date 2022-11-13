@@ -1,7 +1,5 @@
-# frozen_string_literal: true
-
 class PatientsController < ApplicationController
-  before_action :authenticate_doctor!, only: %i[index new edit create update destroy]
+  # before_action :authenticate_doctor!, only: %i[index new edit create update destroy]
   before_action :set_patient, only: %i[show edit update destroy]
 
   # GET /patients or /patients.json
@@ -63,6 +61,6 @@ class PatientsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def patient_params
-    params.require(:patient).permit(:first_name, :last_name, :national_id, :image, :telephone, :gender)
+    params.require(:patient).permit(:first_name, :last_name, :national_id, :image, :telephone, :gender, :date_of_birth)
   end
 end

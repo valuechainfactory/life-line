@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -11,6 +9,8 @@ gem 'rails', '~> 7.0.4'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
+
+gem 'cloudinary'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
@@ -76,5 +76,4 @@ group :test do
   gem 'webdrivers'
 end
 
-
-gem "rqrcode", "~> 2.1"
+gem 'rqrcode', '~> 2.1'
