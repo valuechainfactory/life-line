@@ -9,6 +9,7 @@
 }
 .conditions-list{
     background-color: #f5f5f5;
+    width:300px !important;
 }
 .conditions-list li{
     list-style: none;
@@ -18,4 +19,7 @@
 .patient-code{
     margin-top: -15%;
     margin-left: 5rem;
+}
+.add-buttons{
+
 }
