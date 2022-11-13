@@ -1,12 +1,13 @@
 <div class="container" id="<%= dom_id patient %>">
   <div class="patient-info d-flex justify-content-between">
-    <div class="patient-image">
-      <%= image_tag(patient.image) if patient.image.attached? %>
-    </div>
+    
     <section class= "patient-name">
       <h4>Patient details </h4>
         <table class="table table-success table-striped table-bordered">
           <tbody>
+          <tr>
+              <th scope="row">Image</th>
+              <td><%= image_tag(patient.image) if patient.image.attached?  %></td>
             <tr>
               <th scope="row">First Name</th>
               <td><%= patient.first_name %></td>
@@ -56,7 +57,7 @@
               <button class="btn btn-success px-3">Patient has no history of asthma</button>
             <% end %>
             </li>
-            <button class="btn btn-light"><%= link_to "Edit", edit_patient_pre_existing_condition_path(patient, pre_existing_condition) %></button>
+            <button class="btn btn-dark text-light"><%= link_to "Edit", edit_patient_pre_existing_condition_path(patient, pre_existing_condition) , class: "text-light" %></button>
           <% end %>
         </ul>
 
