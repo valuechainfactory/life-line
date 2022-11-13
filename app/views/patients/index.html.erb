@@ -5,16 +5,42 @@
 
 <h1>Patients</h1>
 
+<%= link_to "New patient", new_patient_path,class: "btn btn-primary text-align-center" %>
+
 <div id="patients">
+  <div class="main-content">
+    <div class="container mt-7">
+      <!-- Table -->
+        <div class="col">
+          <div class="card shadow">
+            <div class="table-responsive">
+              <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col" class="sort" data-sort="name"></th>
+                    <th scope="col">first name</th>
+                    <th scope="col">last name</th>
+                    <th scope="col">National id</th>
+                    <th scope="col">gender</th>
+                    <th scope="col">Completion</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+              
+      
   <% @patients.each do |patient| %>
     <%= render "patients/indexpatient", patient: patient %>
-    <p>
-      <%= link_to "Show this patient", patient %>
-    </p>
-  <% end %>
-</div>
 
-<%= link_to "New patient", new_patient_path %>
+  <% end %>
+  </table>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+
+
 
 
 

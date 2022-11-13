@@ -1,46 +1,39 @@
 <div id="<%= dom_id patient %>">
-  <p>
-    <strong>First name:</strong>
-    <%= patient.first_name %>
-  </p>
+<tbody>
+ <tr>
+                    <th scope="row">
+                      <div class="media align-items-center">
+                        <a href="#" class="avatar rounded-circle mr-3">
+                          <img alt="Image placeholder" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" style="width: 50px; height: 50px;">
+                        </a>
+                        <div class="media-body">
+                          <span class="mb-0 text-sm"></span>
+                        </div>
+                      </div>
+                    </th>
+                    <td>
+                      <%= patient.first_name %>
+                    </td>
+                    <td>
+                      <span class="mb-0 text-sm"><%= patient.last_name %></span>
+                    
+                    </td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <span class="mr-2"><%= patient.national_id %></span>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="mb-0 text-sm"><%= patient.gender %></span>
+                    
+                    </td>
+                    <td>
+                      <span class="mb-0 text-sm"><%= link_to "Show", patient_path(patient) %></span>
+                    
+                    </td>
+                  </tr>
+</tbody>
 
-
-  <p>
-    <strong>Last name:</strong>
-    <%= patient.last_name %>
-  </p>
-
-  <p>
-    <strong>National:</strong>
-    <%= patient.national_id %>
-  </p>
-
-  <p>
-    <strong>Date of birth:</strong>
-    <%= patient.date_of_birth %>
-  </p>
-
-  <p>
-    <strong>Image:</strong>
-    <%= image_tag(patient.image) if patient.image.attached? %>
-  </p>
-
-  <p>
-    <strong>Telephone:</strong>
-    <%= patient.telephone %>
-  </p>
-
-  <p>
-    <strong>Gender:</strong>
-    <%= patient.gender %>
-  </p>
-
-  <p>
-    <strong>Doctor:</strong>
-    <%= patient.doctor_id %>
-  </p>
-
-</div>
 
 
 
