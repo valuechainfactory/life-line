@@ -17,6 +17,7 @@
 /* stylelint-disable no-duplicate-selectors */
 /* stylelint-disable declaration-block-no-duplicate-custom-properties */
 /* stylelint-disable csstree/validator */
+/* stylelint-disable declaration-block-no-duplicate-properties */
 :root {
   --blue: #5e72e4;
   --indigo: #5603ad;
@@ -51,8 +52,14 @@
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
   --font-family-sans-serif: open sans, sans-serif;
-  --font-family-monospace: sfmono-regular, menlo, monaco, consolas,
-    "Liberation Mono", "Courier New", monospace;
+  --font-family-monospace:
+    sfmono-regular,
+    menlo,
+    monaco,
+    consolas,
+    "Liberation Mono",
+    "Courier New",
+    monospace;
 }
 
 *,
@@ -412,8 +419,11 @@ h3,
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
   text-align: center;
   vertical-align: middle;
   white-space: nowrap;
@@ -428,8 +438,11 @@ h3,
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
   text-align: center;
   vertical-align: middle;
   white-space: nowrap;
@@ -470,7 +483,9 @@ h3,
 
 .btn:not(:disabled):not(.disabled):active:focus,
 .btn:not(:disabled):not(.disabled).active:focus {
-  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08),
+  box-shadow:
+    0 7px 14px rgba(50, 50, 93, 0.1),
+    0 3px 6px rgba(0, 0, 0, 0.08),
     none;
 }
 
@@ -507,8 +522,10 @@ a.btn.disabled {
   border-radius: 0.4375rem;
   background-color: #fff;
   background-clip: padding-box;
-  box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1),
-    0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 50px 100px rgba(50, 50, 93, 0.1),
+    0 15px 35px rgba(50, 50, 93, 0.15),
+    0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .dropdown-menu-right {
@@ -936,6 +953,7 @@ button.bg-default:focus {
   flex-direction: column;
   justify-content: center;
 }
+
 @media (min-width: 1200px) {
   .justify-content-xl-between {
     justify-content: space-between !important;
@@ -1364,19 +1382,16 @@ a.btn-icon-only {
       opacity: 1;
     }
   }
+}
 
-
+@keyframes hide-navbar-dropdown {
+  from {
+    opacity: 1;
   }
 
-  @keyframes hide-navbar-dropdown {
-    from {
-      opacity: 1;
-    }
-
-    to {
-      transform: translate(0, 10px);
-      opacity: 0;
-    }
+  to {
+    transform: translate(0, 10px);
+    opacity: 0;
   }
 }
 
@@ -1530,3 +1545,4 @@ p {
  * index.scss
  * - Add any styles you want here!
  */
+}
