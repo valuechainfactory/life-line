@@ -83,6 +83,12 @@ rspec
 - Twitter: [@Kimutai_01](https://twitter.com/Kimutai_01?s=09)
 - LinkedIn: [@kiprotichkimutai](https://www.linkedin.com/m/in/kimutai-kiprotich-1b5045216)
 
+👤 **Michael Munavu**
+
+- GitHub: [@MICHAELMUNAVU83](https://github.com/MICHAELMUNAVU83)
+- Twitter: [@twitterhandle](https://twitter.com/MichealTrance1)
+- LinkedIn: [Micheal-munavu](https://www.linkedin.com/in/michael-munavu/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
