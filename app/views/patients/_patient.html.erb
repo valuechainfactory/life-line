@@ -1,7 +1,7 @@
 <div class="container" id="<%= dom_id patient %>">
   <div class="patient-info d-flex justify-content-between">
     <div class="patient-image">
-      <%= patient.image %>
+      <%= image_tag(patient.image) if patient.image.attached? %>
     </div>
     <section class= "patient-name">
       <h4>Patient details </h4>
@@ -56,21 +56,25 @@
             <button class="btn btn-success px-3">No</button>
           <% end %>
           </li>
+          <button class="btn btn-light"><%= link_to "Edit", edit_patient_pre_existing_condition_path(patient, pre_existing_condition) %></button>
         <% end %>
       </ul>
-      <button class="btn btn-light"><%= link_to "Add pre existing condition" , new_patient_pre_existing_condition_path(@patient) %></button>
+
 
     <hr>
 
     <div class="patient-allergies">
     <section class="food-allergies">
       <h4 class="text-center">Allergies</h4>
-          <table class="table table-striped">
-            <tbody>
-            <% if patient.food_allergies.length>0 %>
+      <% if patient.food_allergies.length>0 %>
             <% patient.food_allergies.map do |food_allergy| %>
-              <tr>
+          <table class="table table-striped">
+              <thead>
                 <th scope="row">Food Allergy</th>
+              </thead>
+            <tbody>
+
+              <tr>
                 <td><%= food_allergy.name %></td>
               </tr>
             <% end %>
