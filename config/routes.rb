@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :drug_allergies
   end
   devise_for :doctors
-  root to: 'patients#index'
+  root to: "doctors#index"
 
   devise_scope :doctor do
     get '/doctors/sign_out' => 'devise/sessions#destroy'
