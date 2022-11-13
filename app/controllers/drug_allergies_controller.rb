@@ -1,7 +1,3 @@
-# frozen_string_literal: true
-
-# rubocop: disable Style/Documentation
-
 class DrugAllergiesController < ApplicationController
   before_action :set_patient
   before_action :set_drug_allergy, only: %i[show edit update destroy]
