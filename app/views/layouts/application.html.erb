@@ -17,9 +17,7 @@
   <body>
     
    
-    <% if current_doctor %>
-     <%= link_to "Sign Out", destroy_doctor_session_path %>
-    <% end %>
+    <%= render "layouts/header" %>
   
     <%= yield %>
 
