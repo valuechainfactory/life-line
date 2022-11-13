@@ -68,7 +68,7 @@
 
   <p>
     <strong>Image:</strong>
-    <%= patient.image %>
+    <%= image_tag(patient.image) if patient.image.attached? %>
   </p>
 
   <p>

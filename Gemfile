@@ -76,5 +76,4 @@ group :test do
   gem 'webdrivers'
 end
 
-
-gem "rqrcode", "~> 2.1"
+gem 'rqrcode', '~> 2.1'
