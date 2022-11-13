@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24b2fd3d-e30c-49c3-ae64-628351d64bfe" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/controllers/doctors_controller.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/doctors/index.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ruby-version" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/patient.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/patient.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/patients/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/patients/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/patients/_indexpatient.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/patients/_indexpatient.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/patients/_patient.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/patients/_patient.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20221113023511_create_active_storage_tables.active_storage.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20221113023511_create_active_storage_tables.active_storage.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/patients_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/patients_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +49,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1668305802233</updated>
-      <workItem from="1668305812350" duration="8612000" />
+      <workItem from="1668305812350" duration="9205000" />
     </task>
     <servers />
   </component>

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PatientsController < ApplicationController
-  before_action :authenticate_doctor!, only: %i[index new edit create update destroy]
+  # before_action :authenticate_doctor!, only: %i[index new edit create update destroy]
   before_action :set_patient, only: %i[show edit update destroy]
 
   # GET /patients or /patients.json
