@@ -33,12 +33,9 @@ class PreExistingConditionsController < ApplicationController
 
   # PUT patients/1/pre_existing_conditions/1
   def update
-    if @pre_existing_condition.update_attributes(pre_existing_condition_params)
-      redirect_to([@pre_existing_condition.patient, @pre_existing_condition],
-                  notice: 'Pre existing condition was successfully updated.')
-    else
-      render action: 'edit'
-    end
+    @pre_existing_condition = @patient.pre_existing_conditions.find(params[:id])
+    @pre_existing_condition.update(pre_existing_condition_params)
+    redirect_to (@pre_existing_condition.patient)
   end
 
   # DELETE patients/1/pre_existing_conditions/1
@@ -61,6 +58,6 @@ class PreExistingConditionsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def pre_existing_condition_params
-    params.require(:pre_existing_condition).permit(:diabetes, :hypertension, :asthma, :patient_id)
+    params.require(:pre_existing_condition).permit(:diabetes, :hypertension, :asthma)
   end
 end
